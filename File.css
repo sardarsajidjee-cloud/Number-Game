@@ -1,3 +1,4 @@
+/* Body and general styles */
 body {
   font-family: Arial, sans-serif;
   background: #1e1e1e;
@@ -5,31 +6,63 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+  text-align: center;
 }
 
+/* Game container */
 .game {
   background: #2c2c2c;
   padding: 20px;
   border-radius: 10px;
-  width: 280px;
-  text-align: center;
+  width: 90%;           /* Mobile-friendly width */
+  max-width: 350px;     /* Desktop limit */
+  box-sizing: border-box;
 }
 
+/* Headings */
+h2 {
+  font-size: 6vw;        /* Responsive font */
+  margin-bottom: 15px;
+}
+
+/* Inputs, select, buttons */
 input, select, button {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin: 8px 0;
   border-radius: 5px;
   border: none;
+  font-size: 4vw;        /* Responsive text */
+  box-sizing: border-box;
 }
 
+/* Button specific */
 button {
   background: #4caf50;
   color: white;
   font-weight: bold;
+  transition: 0.2s;
 }
 
-#message {
+button:hover {
+  background: #45a049;
+  cursor: pointer;
+}
+
+/* Message */
+#message, #info, #attempts {
   font-weight: bold;
+  font-size: 4vw;        /* Responsive text */
+  margin: 10px 0;
+}
+
+/* Media query for larger screens */
+@media(min-width: 600px){
+  h2 { font-size: 28px; }
+  input, select, button { font-size: 16px; padding: 8px; }
+  #message, #info, #attempts { font-size: 16px; }
 }
